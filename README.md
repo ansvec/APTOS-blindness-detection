@@ -1,6 +1,6 @@
 # Bakalarska praca - APTOS-blindness-detection
 
-#Abstrakt
+## Abstrakt ## 
 Cieľom tejto práce bolo podať teoretický prehľad o metódach hlbokého učenia a jeho využitia v analýze medicínskych dát. Práca popisuje rôzne state-of-the-art prístupy riešenia tejto problematiky ako aj poprednejších metód s využitím (umelých) neurónových sietí. Experimentovalo sa s voľne dostupným datasetom medicínskych obrázkov s použitím konvolučných neurónových sieti, pričom sme využívali programovací jazyk python a prostredie Anaconda - Juniper Notebook.
 
 #Prehľad problematiky
