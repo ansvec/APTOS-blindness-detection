@@ -16,6 +16,10 @@ Dáta sú prístupné pod linkom: https://www.kaggle.com/c/aptos2019-blindness-d
 Za pomoci tejto dátovej množiny sme sa pokúsili o predikčný model pre atomatizáciu diagnostického procesu diabetickej retinopatie. 
 Experimenty boli implementované v prostedí Anaconda - Jupiter notebook prostredníctvom open-source knižníc pre strojové učenie: Keras a Tensorflow.
 
+
+### Výsledky ###
+Závažným problémom pre úspešné riešenie je problematika overfittingu siete. Vzhľadom nevyvážený súbor údajov je potrebné zvoliť správne predsprocesovanie dát a určiť veľkosť resp. hĺbka neurónovej siete.  
+
 ### Prístup ###
 1. Analýza dátovej množiny na účely výskumu
 3. Predspracovanie obrazu (konverzia na polia, zmena veľkosti)
@@ -29,7 +33,7 @@ Experimenty boli implementované v prostedí Anaconda - Jupiter notebook prostre
 Prístupná dátova množina vykazuje prvky nevyváženého súboru údajov. Najviac zastúpenou triedou sú snímky bez známok DR, teda zdravých pacientov. Súčet zvyšných štyroch tried nedosahuje rovnaký počet dostupných snímok. Fotografie fundusu sa okrem iného vynímajú aj nekonzistentnou kvalitou, zvýšeným šumom a rôznou úrovňou saturácie obrazu.
 
 ### Predspracovanie obrazu ###
-Vykovanli sme konverziu snímok na polia a zjednotili veľkosť obrazu na rozmer 244,244. 
+Vykonali sme konverziu snímok na polia a zjednotili veľkosť obrazu na rozmer 244,244. 
 
 ### Rozdelenie datasetu ###
 Dostupnú trénovaciu množinu z kaggle databázy sme rozdelili na podmnožinu v pomeroch 80:20, 70:30 a 90:10.
@@ -40,4 +44,10 @@ V experimentoch sme pracovali so sekvenčným modelom konvolučnej neurónovej s
 
 ### Trénovanie modelu ###
 Nerónovú sieť sme trénovali so zámerom porovnať výkonnosť modelov s rožnym rozdelením dátovej množiny, transformáciou obrázkov z RGB na Grayscale a využitím Gaussian-ovho filtera. V modeli sme využili ako aktivačnú funkciu RELU, optimalizátor ADAM. Nakoľko sa jedná o multiclass klasifikáciu použili sme kategorickú krížovú entropiu ako chybovú funkciu. 
-Tréning CNN prebiehal s batch size 16, s počtom epoch 20 a model checkpointom pre minimum val_loss.
+Tréning CNN prebiehal s batch size 16, s počtom epoch 20 a model checkpointom pre minimálnu validačnú stratu ako aj maximálnu validačnú presnosť.
+
+### Predikcia a evaluácia modelu ###
+Najlepší uložený model si možeme importovať a vypísať pravdepodobnostné výsledky tréningu. Evaluácia prebieha na základe klasifikačného reportu za pomoci matice nazývanej confusion matrix.
+
+### Mimo rozsah práce ###
+Predmetom ďalšieho výskumu pre optimalizáciu predstaveného predikčného modelu je využitie augmentácie dát pre rozširenie dátovej množiny či už metódou prevzorkovania alebo technikou SMOTE (Synthetic Minority Oversampling Technique).
