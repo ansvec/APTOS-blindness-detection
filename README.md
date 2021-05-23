@@ -18,7 +18,7 @@ Experimenty boli implementované v prostedí Anaconda - Jupiter notebook prostre
 
 
 ### Výsledky ###
-Závažným problémom pre úspešné riešenie je problematika overfittingu siete. Vzhľadom nevyvážený súbor údajov je potrebné zvoliť správne predsprocesovanie dát a určiť veľkosť resp. hĺbka neurónovej siete.  
+Závažným problémom pre úspešné riešenie je problematika overfittingu siete. Vzhľadom na nevyvážený súbor údajov je potrebné zvoliť správne predsprocesovanie dát a určiť veľkosť resp. hĺbku neurónovej siete. Výsledkom našich experimentov je CNN s presnosťou % a sensitivitou % , čo reprodukuje obdobný výstup ako porovnávané štúdie.   
 
 ### Prístup ###
 1. Analýza dátovej množiny na účely výskumu
