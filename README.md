@@ -30,7 +30,7 @@ Závažným problémom pre úspešné riešenie je problematika overfittingu sie
 8. Evaluácia modelu
 
 ### Analýza dátovej množiny na účely výskumu ###
-Prístupná dátova množina vykazuje prvky nevyváženého súboru údajov. Najviac zastúpenou triedou sú snímky bez známok DR, teda zdravých pacientov. Súčet zvyšných štyroch tried nedosahuje rovnaký počet dostupných snímok. Fotografie fundusu sa okrem iného vynímajú aj nekonzistentnou kvalitou, zvýšeným šumom a rôznou úrovňou saturácie obrazu.
+Prístupná dátova množina vykazuje prvky nevyváženého súboru údajov. Najviac zastúpenou triedou sú snímky bez známok DR, teda zdravých pacientov. Súčet zvyšných štyroch tried nedosahuje rovnaký počet dostupných snímok. Fotografie fundusu sa okrem iného vynímajú aj nekonzistentnou kvalitou, rozlíšením, zvýšeným šumom a rôznou úrovňou saturácie obrazu.
 
 ### Predspracovanie obrazu ###
 Vykonali sme konverziu snímok na polia a zjednotili veľkosť obrazu na rozmer 244,244. 
