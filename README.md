@@ -9,9 +9,35 @@ Diabetická retinopatia je ochorenie sietnice. Označuje sa za sekundárne ochor
 V súčasnosti sa diagnostika uskutočňuje pomocou fotografie očnej zrenice. Lekársky skríning vyžaduje manuálnu evaluáciu špecialistu a taktiež adekvátne technické vybavenie, čo predstavuje výraznú výzvu v odľahlých častiach sveta. Automatizácia diagnostického procesu založená na hlbokom učení môže dopomôcť k riešeniu tejto problematiky.
 
 ### Dataset ###
-Kaggle databáza umožnuje prístup k množine desiatok tisíc klinických fotografií sietnice oka. Snímky pozostávajú zo zdravých pacientov a pacientov s ochorením diabetickej retinopatie v rôznych štádiach. Všetky snímky boli evaluované kvalifikovaným oftalmológom a označené príslušnou závažnosťou ochorenia. 
+Kaggle databáza umožnuje prístup k množine desiatok tisíc klinických fotografií sietnice oka. Snímky pozostávajú zo zdravých pacientov a pacientov s ochorením diabetickej retinopatie v rôznych štádiach. Všetky snímky boli evaluované kvalifikovaným oftalmológom a označené príslušnou závažnosťou ochorenia (0 - bez DR, 1 - mierna DR, 2 -mierne pokročilá DR, 3 - pokročilá DR, 4 - proliferatívna DR). 
 
 Dáta sú prístupné pod linkom: https://www.kaggle.com/c/aptos2019-blindness-detection/data
 
 Za pomoci tejto dátovej množiny sme sa pokúsili o predikčný model pre atomatizáciu diagnostického procesu diabetickej retinopatie. 
 Experimenty boli implementované v prostedí Anaconda - Jupiter notebook prostredníctvom open-source knižníc pre strojové učenie: Keras a Tensorflow.
+
+### Prístup ###
+1. Analýza dátovej množiny na účely výskumu
+3. Predspracovanie obrazu (konverzia na polia, zmena veľkosti)
+4. Rozdelenie datasetu 
+5. Vytvorenie modelu CNN 
+6. Trénovanie modelu
+7. Predikcia modelu
+8. Evaluácia modelu
+
+### Analýza dátovej množiny na účely výskumu ###
+Prístupná dátova množina vykazuje prvky nevyváženého súboru údajov. Najviac zastúpenou triedou sú snímky bez známok DR, teda zdravých pacientov. Súčet zvyšných štyroch tried nedosahuje rovnaký počet dostupných snímok. Fotografie fundusu sa okrem iného vynímajú aj nekonzistentnou kvalitou, zvýšeným šumom a rôznou úrovňou saturácie obrazu.
+
+### Predspracovanie obrazu ###
+Vykovanli sme konverziu snímok na polia a zjednotili veľkosť obrazu na rozmer 244,244. 
+
+### Rozdelenie datasetu ###
+Dostupnú trénovaciu množinu z kaggle databázy sme rozdelili na podmnožinu v pomeroch 80:20, 70:30 a 90:10.
+Príslúchajúca testovacia podmnožina bola taktiež rozdelená na validačnú s pomerom X : 1.5.
+
+### CNN ###
+V experimentoch sme pracovali so sekvenčným modelom konvolučnej neurónovej siete pozostávajúcou z 3 vrstiev CONV2D, maxpooling a dropout metód. 
+
+### Trénovanie modelu ###
+Nerónovú sieť sme trénovali so zámerom porovnať výkonnosť modelov s rožnym rozdelením dátovej množiny, transformáciou obrázkov z RGB na Grayscale a využitím Gaussian-ovho filtera. V modeli sme využili ako aktivačnú funkciu RELU, optimalizátor ADAM. Nakoľko sa jedná o multiclass klasifikáciu použili sme kategorickú krížovú entropiu ako chybovú funkciu. 
+Tréning CNN prebiehal s batch size 16, s počtom epoch 20 a model checkpointom pre minimum val_loss.
