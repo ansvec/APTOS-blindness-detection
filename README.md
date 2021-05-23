@@ -11,7 +11,7 @@ V súčasnosti sa diagnostika uskutočňuje pomocou fotografie očnej zrenice. L
 ### Dataset ###
 Kaggle databáza umožnuje prístup k množine desiatok tisíc klinických fotografií sietnice oka. Snímky pozostávajú zo zdravých pacientov a pacientov s ochorením diabetickej retinopatie v rôznych štádiach. Všetky snímky boli evaluované kvalifikovaným oftalmológom a označené príslušnou závažnosťou ochorenia. 
 
-Dáta sú prístupné pod linkom: https://www.kaggle.com/c/aptos2019-blindness-detection/data and https://www.kaggle.com/c/diabetic-retinopathy-detection
+Dáta sú prístupné pod linkom: https://www.kaggle.com/c/aptos2019-blindness-detection/data
 
 Za pomoci tejto dátovej množiny sme sa pokúsili o predikčný model pre atomatizáciu diagnostického procesu diabetickej retinopatie. 
 Experimenty boli implementované v prostedí Anaconda - Jupiter notebook prostredníctvom open-source knižníc pre strojové učenie: Keras a Tensorflow.
