@@ -50,4 +50,4 @@ Tréning CNN prebiehal s batch size 16, s počtom epoch 20 a model checkpointom 
 Najlepší uložený model si možeme importovať a vypísať pravdepodobnostné výsledky tréningu. Evaluácia prebieha na základe klasifikačného reportu za pomoci matice nazývanej confusion matrix.
 
 ### Mimo rozsah práce ###
-Predmetom ďalšieho výskumu pre optimalizáciu predstaveného predikčného modelu je využitie augmentácie dát pre rozširenie dátovej množiny či už metódou prevzorkovania alebo technikou SMOTE (Synthetic Minority Oversampling Technique).
+Predmetom ďalšieho výskumu pre optimalizáciu predstaveného predikčného modelu je využitie augmentácie dát pre rozširenie dátovej množiny či už technikou prevzorkovania alebo technikou SMOTE (Synthetic Minority Oversampling Technique).
