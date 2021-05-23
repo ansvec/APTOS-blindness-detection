@@ -36,8 +36,7 @@ Prístupná dátova množina vykazuje prvky nevyváženého súboru údajov. Naj
 Vykonali sme konverziu snímok na polia a zjednotili veľkosť obrazu na rozmer 244,244. 
 
 ### Rozdelenie datasetu ###
-Dostupnú trénovaciu množinu z kaggle databázy sme rozdelili na podmnožinu v pomeroch 80:20, 70:30 a 90:10.
-Príslúchajúca testovacia podmnožina bola taktiež rozdelená na validačnú s pomerom X : 1.5.
+Dostupnú trénovaciu množinu z kaggle databázy sme stratifikovaným vorkovaním rozdelili na podmnožinu v pomeroch 80:20, 70:30 a 90:10. Príslúchajúca testovacia podmnožina bola taktiež rozdelená na validačnú s pomerom X : 1.5.
 
 ### CNN ###
 V experimentoch sme pracovali so sekvenčným modelom konvolučnej neurónovej siete pozostávajúcou z 3 vrstiev CONV2D, maxpooling a dropout metód. 
