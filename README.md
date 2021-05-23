@@ -13,5 +13,5 @@ Kaggle databáza umožnuje prístup k množine desiatok tisíc klinických fotog
 
 Dáta sú prístupné pod linkom: https://www.kaggle.com/c/aptos2019-blindness-detection/data and https://www.kaggle.com/c/diabetic-retinopathy-detection
 
-Za pomoci tejto dátovej množiny sme sa pokúsili vytvoriť pravdepodobnostný systém pre automatickú diagnostiku ochorenia diabetickej retinopatie. Pre vykonané experimenty sme využívali programovací jazyk Python a prostredie Anaconda - Jupiter Notebook. 
-
+Za pomoci tejto dátovej množiny sme sa pokúsili o predikčný model pre atomatizáciu diagnostického procesu diabetickej retinopatie. 
+Experimenty boli implementované v prostedí Anaconda - Jupiter notebook prostredníctvom open-source knižníc pre strojové učenie: Keras a Tensorflow.
