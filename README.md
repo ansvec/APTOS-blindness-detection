@@ -33,20 +33,17 @@ Závažným problémom pre úspešné riešenie je problematika overfittingu sie
 Prístupná dátova množina vykazuje prvky nevyváženého súboru údajov. Najviac zastúpenou triedou sú snímky bez známok DR, teda zdravých pacientov. Súčet zvyšných štyroch tried nedosahuje rovnaký počet dostupných snímok. Fotografie fundusu sa okrem iného vynímajú aj nekonzistentnou kvalitou, rozlíšením, zvýšeným šumom a rôznou úrovňou saturácie obrazu.
 
 ### Predspracovanie obrazu ###
-Vykonali sme konverziu snímok na polia a zjednotili veľkosť obrazu na rozmer 244,244. 
+Vykonali sme konverziu snímok na polia a zjednotili veľkosť obrazu na rozmer 244x244. 
 
 ### Rozdelenie datasetu ###
-Dostupnú trénovaciu množinu z kaggle databázy sme stratifikovaným vorkovaním rozdelili na podmnožinu v pomeroch 80:20, 70:30 a 90:10. Príslúchajúca testovacia podmnožina bola taktiež rozdelená na validačnú s pomerom X : 1.5.
+Dostupnú trénovaciu množinu z kaggle databázy sme v prvom experimente rozdelili stratifikovaným vorkovaním na podmnožinu v pomeroch 80:20, 70:30 a 90:10. Príslúchajúca testovacia podmnožina bola taktiež rozdelená na validačnú s pomerom X : 15. V druhom experimente sme využili augmentáciu dát.
 
 ### CNN ###
-V experimentoch sme pracovali so sekvenčným modelom konvolučnej neurónovej siete pozostávajúcou z 3 vrstiev CONV2D, maxpooling a dropout metód. 
+V experimentoch sme pracovali so sekvenčným modelom konvolučnej neurónovej siete. 
 
 ### Trénovanie modelu ###
-Nerónovú sieť sme trénovali so zámerom porovnať výkonnosť modelov s rožnym rozdelením dátovej množiny, transformáciou obrázkov z RGB na Grayscale a využitím Gaussian-ovho filtera. V modeli sme využili ako aktivačnú funkciu RELU, optimalizátor ADAM. Nakoľko sa jedná o multiclass klasifikáciu použili sme kategorickú krížovú entropiu ako chybovú funkciu. 
-Tréning CNN prebiehal s batch size 16, s počtom epoch 20 a model checkpointom pre minimálnu validačnú stratu ako aj maximálnu validačnú presnosť.
+Nerónovú sieť sme trénovali so zámerom porovnať výkonnosť modelov s rožnym rozdelením dátovej množiny, transformáciou obrázkov z RGB na Grayscale a využitím Gaussian-ovho filtera. V modeli sme využili ako aktivačnú funkciu RELU, optimalizátor ADAM. Nakoľko sa jedná o multiclass klasifikáciu použili sme kategorickú krížovú entropiu ako chybovú funkciu. Tréning CNN prebiehal s batch size 16, s počtom epoch 20 a model checkpointom pre minimálnu validačnú stratu ako aj maximálnu validačnú presnosť.
 
 ### Predikcia a evaluácia modelu ###
-Najlepší uložený model si možeme importovať a vypísať pravdepodobnostné výsledky tréningu. Evaluácia prebieha na základe klasifikačného reportu za pomoci matice nazývanej confusion matrix.
+Najlepší uložený model si možeme importovať a vypísať pravdepodobnostné výsledky tréningu. Predikčný model na báze neurónovej konvolučnej siete je plne funkčný a predstavuje potenciálne riešenie pre automatizáciu diagnostiky ochorenia DR. Predmetom ďalšieho výskumu predstavuje optimalizácia výkonnosti siete ako aj zvýšenie citlivosti predikovaných tried.
 
-### Mimo rozsah práce ###
-Predmetom ďalšieho výskumu pre optimalizáciu predstaveného predikčného modelu je využitie augmentácie dát pre rozširenie dátovej množiny či už technikou prevzorkovania alebo technikou SMOTE (Synthetic Minority Oversampling Technique).
